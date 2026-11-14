@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vergil-fixture-python-app"
+version = "0.1.0"
+description = "Vergil test fixture: a small Python command-line application"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = ["rich>=13.0", "pyyaml>=6.0", "packaging>=24.0"]
+
+[project.scripts]
+vergil-fixture-python-app = "vergil_fixture_python_app.cli:main"
+
+[dependency-groups]
+dev = ["ruff", "mypy", "ty", "pytest", "pytest-cov", "pytest-xdist", "pip-audit", "pip-licenses", "types-pyyaml"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "S", "B", "A", "C4", "SIM", "TCH", "ARG", "PTH", "ERA"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

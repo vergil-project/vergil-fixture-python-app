@@ -481,6 +481,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sort-reverse-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sort [--reverse] VERSION...
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -553,6 +564,17 @@
     <span class="md-ellipsis">
       
         keys FILE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sort-reverse-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sort [--reverse] VERSION...
       
     </span>
   </a>
@@ -634,6 +656,20 @@ with the type of each value, as a <code>rich</code> table under the file's path.
 </code></pre></div>
 <p>A file that cannot be read, is not valid YAML, or does not hold a mapping
 fails.</p>
+<h2 id="sort-reverse-version"><code>sort [--reverse] VERSION...</code><a class="headerlink" href="#sort-reverse-version" title="Permanent link">&para;</a></h2>
+<p>List one or more versions in <a href="https://peps.python.org/pep-0440/">PEP 440</a>
+order, oldest first, one per line, each printed as given. <code>--reverse</code> (<code>-r</code>)
+lists the newest first. Equal versions, such as <code>1.0</code> and <code>1.0.0</code>, keep the
+order they were given in.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>vergil-fixture-python-app<span class="w"> </span>sort<span class="w"> </span><span class="m">1</span>.10.0<span class="w"> </span><span class="m">1</span>.2.0<span class="w"> </span><span class="m">1</span>.0.0rc1
+<span class="go">1.0.0rc1</span>
+<span class="go">1.2.0</span>
+<span class="go">1.10.0</span>
+<span class="gp">$ </span>vergil-fixture-python-app<span class="w"> </span>sort<span class="w"> </span>--reverse<span class="w"> </span><span class="m">1</span>.10.0<span class="w"> </span><span class="m">1</span>.2.0
+<span class="go">1.10.0</span>
+<span class="go">1.2.0</span>
+</code></pre></div>
+<p>A version that is not valid under PEP 440 fails, and nothing is printed.</p>
 
 
 

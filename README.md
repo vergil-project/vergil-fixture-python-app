@@ -1,6 +1,11 @@
 # vergil-fixture-python-app
 
-Vergil test fixture: a Python application. No users; integration test and example repo.
+This is a **Vergil test fixture** with no users: a small, real Python
+command-line application that Vergil itself is tested against. It exercises
+the Python `vrg-validate` gates, CI, the docs site, the dependency audit and
+updates, and the tagged release of an application, each run for real through
+Vergil's full cycle. The design is in
+[`epics/1091-language-fixture-repos/spec.md`](https://github.com/vergil-project/.github/blob/develop/epics/1091-language-fixture-repos/spec.md).
 
 ## Table of Contents
 
@@ -11,15 +16,26 @@ Vergil test fixture: a Python application. No users; integration test and exampl
 
 ## Status
 
-Early development
+A test fixture. It is never published to a package registry.
 
 ## Overview
 
-TODO
+`vergil-fixture-python-app` has four subcommands:
+
+- `greet NAME` prints `Hello, NAME`.
+- `compare LEFT RIGHT` orders two versions by the PEP 440 rules.
+- `keys FILE` lists the top-level keys of a YAML mapping and their types.
+- `sort VERSION...` lists versions in PEP 440 order, one per line.
+
+Its runtime dependencies are `rich`, `PyYAML` and `packaging`. Each fixture
+run adds one small change, so a new subcommand is one module under
+`src/vergil_fixture_python_app/commands/`, one entry in its `COMMANDS`
+tuple, and its tests.
 
 ## Getting Started
 
 See the [documentation](https://vergil-project.github.io/vergil-fixture-python-app/).
+Validate with `vrg-container-run -- vrg-validate`.
 
 ## License
 

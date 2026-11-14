@@ -27,7 +27,7 @@ The design is in the epic's spec,
 
 ## The program
 
-`vergil-fixture-python-app` has three subcommands. See [Usage](usage.md).
+`vergil-fixture-python-app` has four subcommands. See [Usage](usage.md).
 
 The program grows by one small change per fixture run, so it is built to
 take one more subcommand without restructuring: a subcommand is one module

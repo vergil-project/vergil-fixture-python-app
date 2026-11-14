@@ -253,6 +253,25 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="usage/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Usage
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -314,6 +333,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -330,6 +367,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-is-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it is for
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The program
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -362,6 +440,33 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -382,6 +487,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-is-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it is for
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The program
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -398,7 +533,32 @@
 
 
 <h1 id="vergil-fixture-python-app">vergil-fixture-python-app<a class="headerlink" href="#vergil-fixture-python-app" title="Permanent link">&para;</a></h1>
-<p>Welcome to the vergil-fixture-python-app documentation.</p>
+<p>This is a <strong>Vergil test fixture</strong>. It has no users. It is a small, real
+Python command-line application that Vergil itself is tested against.</p>
+<h2 id="what-it-is-for">What it is for<a class="headerlink" href="#what-it-is-for" title="Permanent link">&para;</a></h2>
+<p>The fixture is managed exactly like a real Vergil Python application, with
+every fleet automation enabled. Each fixture run drives it through Vergil's
+full cycle for real: a change, a pull request, CI, a merge, a release, and a
+validation of the result. A run that goes red shows a Vergil regression
+before a real repository meets it.</p>
+<p>It exercises:</p>
+<ul>
+<li>the Python <code>vrg-validate</code> gates: ruff, mypy, ty, pytest at 100% branch
+  coverage, pip-audit and the license check;</li>
+<li>the CI workflows, the docs site build and its publishing to GitHub Pages;</li>
+<li>the dependency audit and updates, through three real runtime
+  dependencies: <code>rich</code>, <code>PyYAML</code> and <code>packaging</code>;</li>
+<li>the tagged release of an application.</li>
+</ul>
+<p>Nothing it does reaches a package registry.</p>
+<p>The design is in the epic's spec,
+<a href="https://github.com/vergil-project/.github/blob/develop/epics/1091-language-fixture-repos/spec.md">Language fixture repos</a>.</p>
+<h2 id="the-program">The program<a class="headerlink" href="#the-program" title="Permanent link">&para;</a></h2>
+<p><code>vergil-fixture-python-app</code> has four subcommands. See <a href="usage/">Usage</a>.</p>
+<p>The program grows by one small change per fixture run, so it is built to
+take one more subcommand without restructuring: a subcommand is one module
+under <code>src/vergil_fixture_python_app/commands/</code>, one entry in its
+<code>COMMANDS</code> tuple, and its tests.</p>
 
 
 

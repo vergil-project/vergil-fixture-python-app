@@ -59,3 +59,22 @@ config.yaml
 
 A file that cannot be read, is not valid YAML, or does not hold a mapping
 fails.
+
+## `sort [--reverse] VERSION...`
+
+List one or more versions in [PEP 440](https://peps.python.org/pep-0440/)
+order, oldest first, one per line, each printed as given. `--reverse` (`-r`)
+lists the newest first. Equal versions, such as `1.0` and `1.0.0`, keep the
+order they were given in.
+
+```console
+$ vergil-fixture-python-app sort 1.10.0 1.2.0 1.0.0rc1
+1.0.0rc1
+1.2.0
+1.10.0
+$ vergil-fixture-python-app sort --reverse 1.10.0 1.2.0
+1.10.0
+1.2.0
+```
+
+A version that is not valid under PEP 440 fails, and nothing is printed.

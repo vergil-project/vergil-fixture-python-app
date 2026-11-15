@@ -24,7 +24,7 @@ $ vergil-fixture-python-app greet Ada
 Hello, Ada
 ```
 
-An empty name fails.
+An empty or whitespace-only name fails.
 
 ## `compare LEFT RIGHT`
 

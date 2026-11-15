@@ -20,7 +20,7 @@ A test fixture. It is never published to a package registry.
 
 ## Overview
 
-`vergil-fixture-python-app` has four subcommands:
+`vergil-fixture-python-app` has these subcommands:
 
 - `greet NAME` prints `Hello, NAME`.
 - `compare LEFT RIGHT` orders two versions by the PEP 440 rules.

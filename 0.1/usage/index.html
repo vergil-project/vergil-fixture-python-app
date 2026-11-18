@@ -492,6 +492,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#normalize-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        normalize VERSION...
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -581,6 +592,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#normalize-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        normalize VERSION...
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -631,7 +653,7 @@
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>vergil-fixture-python-app<span class="w"> </span>greet<span class="w"> </span>Ada
 <span class="go">Hello, Ada</span>
 </code></pre></div>
-<p>An empty name fails.</p>
+<p>An empty or whitespace-only name fails.</p>
 <h2 id="compare-left-right"><code>compare LEFT RIGHT</code><a class="headerlink" href="#compare-left-right" title="Permanent link">&para;</a></h2>
 <p>Order two versions by the <a href="https://peps.python.org/pep-0440/">PEP 440</a>
 rules, using <code>packaging</code>. It prints the two versions as given, with <code>&lt;</code>,
@@ -668,6 +690,18 @@ order they were given in.</p>
 <span class="gp">$ </span>vergil-fixture-python-app<span class="w"> </span>sort<span class="w"> </span>--reverse<span class="w"> </span><span class="m">1</span>.10.0<span class="w"> </span><span class="m">1</span>.2.0
 <span class="go">1.10.0</span>
 <span class="go">1.2.0</span>
+</code></pre></div>
+<p>A version that is not valid under PEP 440 fails, and nothing is printed.</p>
+<h2 id="normalize-version"><code>normalize VERSION...</code><a class="headerlink" href="#normalize-version" title="Permanent link">&para;</a></h2>
+<p>Print the <a href="https://peps.python.org/pep-0440/">PEP 440</a> normal form of one
+or more versions, using <code>packaging</code>, one per line in the order given. The
+normal form drops a leading <code>v</code> and a zero epoch, lowercases, and spells
+pre-, post- and development releases and local labels the standard way.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>vergil-fixture-python-app<span class="w"> </span>normalize<span class="w"> </span>V1.0<span class="w"> </span><span class="m">1</span>.0-alpha.1<span class="w"> </span><span class="m">1</span>.0-1<span class="w"> </span><span class="m">1</span>.0+Ubuntu-1
+<span class="go">1.0</span>
+<span class="go">1.0a1</span>
+<span class="go">1.0.post1</span>
+<span class="go">1.0+ubuntu.1</span>
 </code></pre></div>
 <p>A version that is not valid under PEP 440 fails, and nothing is printed.</p>
 

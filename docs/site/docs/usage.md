@@ -24,7 +24,7 @@ $ vergil-fixture-python-app greet Ada
 Hello, Ada
 ```
 
-An empty name fails.
+An empty or whitespace-only name fails.
 
 ## `compare LEFT RIGHT`
 
@@ -75,6 +75,23 @@ $ vergil-fixture-python-app sort 1.10.0 1.2.0 1.0.0rc1
 $ vergil-fixture-python-app sort --reverse 1.10.0 1.2.0
 1.10.0
 1.2.0
+```
+
+A version that is not valid under PEP 440 fails, and nothing is printed.
+
+## `normalize VERSION...`
+
+Print the [PEP 440](https://peps.python.org/pep-0440/) normal form of one
+or more versions, using `packaging`, one per line in the order given. The
+normal form drops a leading `v` and a zero epoch, lowercases, and spells
+pre-, post- and development releases and local labels the standard way.
+
+```console
+$ vergil-fixture-python-app normalize V1.0 1.0-alpha.1 1.0-1 1.0+Ubuntu-1
+1.0
+1.0a1
+1.0.post1
+1.0+ubuntu.1
 ```
 
 A version that is not valid under PEP 440 fails, and nothing is printed.

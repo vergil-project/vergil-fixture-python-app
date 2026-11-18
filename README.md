@@ -26,6 +26,7 @@ A test fixture. It is never published to a package registry.
 - `compare LEFT RIGHT` orders two versions by the PEP 440 rules.
 - `keys FILE` lists the top-level keys of a YAML mapping and their types.
 - `sort VERSION...` lists versions in PEP 440 order, one per line.
+- `normalize VERSION...` prints the PEP 440 normal form of each version.
 
 Its runtime dependencies are `rich`, `PyYAML` and `packaging`. Each fixture
 run adds one small change, so a new subcommand is one module under

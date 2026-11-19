@@ -95,3 +95,21 @@ $ vergil-fixture-python-app normalize V1.0 1.0-alpha.1 1.0-1 1.0+Ubuntu-1
 ```
 
 A version that is not valid under PEP 440 fails, and nothing is printed.
+
+## `latest [--stable] VERSION...`
+
+Print the newest of one or more versions by the
+[PEP 440](https://peps.python.org/pep-0440/) rules, using `packaging`,
+printed as given. Of equal versions, such as `1.0` and `1.0.0`, the first
+given is printed. `--stable` (`-s`) skips pre-releases and development
+releases.
+
+```console
+$ vergil-fixture-python-app latest 1.2.0 1.10.0 2.0rc1
+2.0rc1
+$ vergil-fixture-python-app latest --stable 1.2.0 1.10.0 2.0rc1
+1.10.0
+```
+
+A version that is not valid under PEP 440 fails, and so does `--stable`
+when every version given is a pre-release or development release.

@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -503,6 +503,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#latest-stable-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        latest [--stable] VERSION...
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -597,6 +608,17 @@
     <span class="md-ellipsis">
       
         normalize VERSION...
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#latest-stable-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        latest [--stable] VERSION...
       
     </span>
   </a>
@@ -704,6 +726,19 @@ pre-, post- and development releases and local labels the standard way.</p>
 <span class="go">1.0+ubuntu.1</span>
 </code></pre></div>
 <p>A version that is not valid under PEP 440 fails, and nothing is printed.</p>
+<h2 id="latest-stable-version"><code>latest [--stable] VERSION...</code><a class="headerlink" href="#latest-stable-version" title="Permanent link">&para;</a></h2>
+<p>Print the newest of one or more versions by the
+<a href="https://peps.python.org/pep-0440/">PEP 440</a> rules, using <code>packaging</code>,
+printed as given. Of equal versions, such as <code>1.0</code> and <code>1.0.0</code>, the first
+given is printed. <code>--stable</code> (<code>-s</code>) skips pre-releases and development
+releases.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>vergil-fixture-python-app<span class="w"> </span>latest<span class="w"> </span><span class="m">1</span>.2.0<span class="w"> </span><span class="m">1</span>.10.0<span class="w"> </span><span class="m">2</span>.0rc1
+<span class="go">2.0rc1</span>
+<span class="gp">$ </span>vergil-fixture-python-app<span class="w"> </span>latest<span class="w"> </span>--stable<span class="w"> </span><span class="m">1</span>.2.0<span class="w"> </span><span class="m">1</span>.10.0<span class="w"> </span><span class="m">2</span>.0rc1
+<span class="go">1.10.0</span>
+</code></pre></div>
+<p>A version that is not valid under PEP 440 fails, and so does <code>--stable</code>
+when every version given is a pre-release or development release.</p>
 
 
 

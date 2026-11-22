@@ -6,7 +6,7 @@ it to :data:`COMMANDS`.
 
 from __future__ import annotations
 
-from vergil_fixture_python_app.commands import compare, greet, keys, latest, normalize, sort
+from vergil_fixture_python_app.commands import compare, greet, keys, latest, match, normalize, sort
 
 COMMANDS = (
     greet.COMMAND,
@@ -15,4 +15,5 @@ COMMANDS = (
     sort.COMMAND,
     normalize.COMMAND,
     latest.COMMAND,
+    match.COMMAND,
 )

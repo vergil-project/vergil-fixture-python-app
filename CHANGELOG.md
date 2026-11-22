@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.3] - 2026-11-22
+
+### Chores
+
+- uv lock --upgrade
+
+### Features
+
+- add the match subcommand and roll packaging back in uv.lock (#45)
+
 ## [0.1.2] - 2026-11-19
 
 ### CI

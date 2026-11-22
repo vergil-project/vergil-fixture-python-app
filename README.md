@@ -29,6 +29,7 @@ A test fixture. It is never published to a package registry.
 - `normalize VERSION...` prints the PEP 440 normal form of each version.
 - `latest VERSION...` prints the newest version, optionally skipping pre-releases.
 - `match SPECIFIER VERSION...` prints the versions a PEP 440 specifier allows.
+- `bump PART VERSION` prints the next major, minor or micro release after a version.
 
 Its runtime dependencies are `rich`, `PyYAML` and `packaging`. Each fixture
 run adds one small change, so a new subcommand is one module under

@@ -514,6 +514,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#match-specifier-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        match SPECIFIER VERSION...
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -619,6 +630,17 @@
     <span class="md-ellipsis">
       
         latest [--stable] VERSION...
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#match-specifier-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        match SPECIFIER VERSION...
       
     </span>
   </a>
@@ -739,6 +761,18 @@ releases.</p>
 </code></pre></div>
 <p>A version that is not valid under PEP 440 fails, and so does <code>--stable</code>
 when every version given is a pre-release or development release.</p>
+<h2 id="match-specifier-version"><code>match SPECIFIER VERSION...</code><a class="headerlink" href="#match-specifier-version" title="Permanent link">&para;</a></h2>
+<p>Print the versions that a <a href="https://peps.python.org/pep-0440/">PEP 440</a>
+version specifier, such as <code>&gt;=1.2,&lt;2</code> or <code>~=1.4</code>, allows, using
+<code>packaging</code>, one per line in the order given, each printed as given. A
+pre-release or development release is judged by the specifier like any
+other version.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>vergil-fixture-python-app<span class="w"> </span>match<span class="w"> </span><span class="s1">'&gt;=1.2,&lt;2'</span><span class="w"> </span><span class="m">1</span>.0<span class="w"> </span><span class="m">1</span>.10.0<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span><span class="m">1</span>.2
+<span class="go">1.10.0</span>
+<span class="go">1.2</span>
+</code></pre></div>
+<p>A specifier or version that is not valid under PEP 440 fails, and nothing
+is printed. So does a run in which no version matches.</p>
 
 
 

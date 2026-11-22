@@ -113,3 +113,20 @@ $ vergil-fixture-python-app latest --stable 1.2.0 1.10.0 2.0rc1
 
 A version that is not valid under PEP 440 fails, and so does `--stable`
 when every version given is a pre-release or development release.
+
+## `match SPECIFIER VERSION...`
+
+Print the versions that a [PEP 440](https://peps.python.org/pep-0440/)
+version specifier, such as `>=1.2,<2` or `~=1.4`, allows, using
+`packaging`, one per line in the order given, each printed as given. A
+pre-release or development release is judged by the specifier like any
+other version.
+
+```console
+$ vergil-fixture-python-app match '>=1.2,<2' 1.0 1.10.0 2.0 1.2
+1.10.0
+1.2
+```
+
+A specifier or version that is not valid under PEP 440 fails, and nothing
+is printed. So does a run in which no version matches.

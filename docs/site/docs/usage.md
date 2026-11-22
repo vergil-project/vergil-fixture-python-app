@@ -130,3 +130,22 @@ $ vergil-fixture-python-app match '>=1.2,<2' 1.0 1.10.0 2.0 1.2
 
 A specifier or version that is not valid under PEP 440 fails, and nothing
 is printed. So does a run in which no version matches.
+
+## `bump PART VERSION`
+
+Print the next `major`, `minor` or `micro` release after a
+[PEP 440](https://peps.python.org/pep-0440/) version, using `packaging`.
+The named release number goes up by one and the ones after it become `0`.
+The result always has three release numbers: a shorter version is padded
+with `0` and a longer one is cut to three. Any pre-release, post-release,
+development or local part is dropped, and an epoch is kept.
+
+```console
+$ vergil-fixture-python-app bump minor 1.2.3
+1.3.0
+$ vergil-fixture-python-app bump micro 1.2
+1.2.1
+```
+
+A version that is not valid under PEP 440 fails, and so does a part other
+than `major`, `minor` or `micro`.

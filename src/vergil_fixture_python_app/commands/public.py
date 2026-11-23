@@ -35,7 +35,7 @@ def _run(args: argparse.Namespace, console: Console) -> int:
 
 COMMAND = Command(
     name="public",
-    help="Print the public version (without the local label) of each version.",
+    help="Print the public version (no local label) of each version.",
     configure=_configure,
     run=_run,
 )

@@ -25,6 +25,7 @@ def test_every_command_is_registered_once() -> None:
         "match",
         "bump",
         "base",
+        "public",
     ]
     assert len(set(names)) == len(names)
 

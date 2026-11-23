@@ -167,3 +167,21 @@ $ vergil-fixture-python-app base 1.2.3rc1 2.0.post1 '1!3.1.dev4'
 ```
 
 A version that is not valid under PEP 440 fails, and nothing is printed.
+
+## `public VERSION...`
+
+Print the public version of each of one or more
+[PEP 440](https://peps.python.org/pep-0440/) versions, using `packaging`,
+one per line in the order given. The public version is the version in
+normal form without its local label (the part after `+`). Unlike `base`,
+it keeps every other part: the epoch and any pre-release, post-release or
+development part.
+
+```console
+$ vergil-fixture-python-app public 1.2.3+local.7 2.0rc1+abc 3.1
+1.2.3
+2.0rc1
+3.1
+```
+
+A version that is not valid under PEP 440 fails, and nothing is printed.

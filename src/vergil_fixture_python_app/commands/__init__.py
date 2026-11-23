@@ -15,6 +15,7 @@ from vergil_fixture_python_app.commands import (
     latest,
     match,
     normalize,
+    public,
     sort,
 )
 
@@ -28,4 +29,5 @@ COMMANDS = (
     match.COMMAND,
     bump.COMMAND,
     base.COMMAND,
+    public.COMMAND,
 )

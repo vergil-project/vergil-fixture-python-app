@@ -15,7 +15,17 @@ if TYPE_CHECKING:
 
 def test_every_command_is_registered_once() -> None:
     names = [command.name for command in COMMANDS]
-    assert names == ["greet", "compare", "keys", "sort", "normalize", "latest", "match", "bump"]
+    assert names == [
+        "greet",
+        "compare",
+        "keys",
+        "sort",
+        "normalize",
+        "latest",
+        "match",
+        "bump",
+        "base",
+    ]
     assert len(set(names)) == len(names)
 
 

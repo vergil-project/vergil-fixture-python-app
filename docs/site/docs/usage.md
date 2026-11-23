@@ -149,3 +149,21 @@ $ vergil-fixture-python-app bump micro 1.2
 
 A version that is not valid under PEP 440 fails, and so does a part other
 than `major`, `minor` or `micro`.
+
+## `base VERSION...`
+
+Print the base version of each of one or more
+[PEP 440](https://peps.python.org/pep-0440/) versions, using `packaging`,
+one per line in the order given. The base version is the epoch and the
+release numbers only, in normal form: any pre-release, post-release,
+development or local part is dropped. Unlike `bump`, the release numbers
+are neither padded nor cut.
+
+```console
+$ vergil-fixture-python-app base 1.2.3rc1 2.0.post1 '1!3.1.dev4'
+1.2.3
+2.0
+1!3.1
+```
+
+A version that is not valid under PEP 440 fails, and nothing is printed.

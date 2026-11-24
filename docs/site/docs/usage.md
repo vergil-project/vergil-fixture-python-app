@@ -185,3 +185,20 @@ $ vergil-fixture-python-app public 1.2.3+local.7 2.0rc1+abc 3.1
 ```
 
 A version that is not valid under PEP 440 fails, and nothing is printed.
+
+## `local VERSION...`
+
+Print the local label of each of one or more
+[PEP 440](https://peps.python.org/pep-0440/) versions, using `packaging`,
+one per line in the order given. The local label is the part after `+`, in
+normal form: lower case, with `-` and `_` separators written as `.`, and
+leading zeros dropped from a numeric segment. It is the part `public` drops.
+
+```console
+$ vergil-fixture-python-app local 1.2.3+local.7 2.0rc1+Ubuntu-1
+local.7
+ubuntu.1
+```
+
+A version that is not valid under PEP 440 fails, and so does a version with
+no local label; either way nothing is printed.

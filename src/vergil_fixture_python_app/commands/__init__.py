@@ -13,6 +13,7 @@ from vergil_fixture_python_app.commands import (
     greet,
     keys,
     latest,
+    local,
     match,
     normalize,
     public,
@@ -30,4 +31,5 @@ COMMANDS = (
     bump.COMMAND,
     base.COMMAND,
     public.COMMAND,
+    local.COMMAND,
 )

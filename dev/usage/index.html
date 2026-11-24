@@ -558,6 +558,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#local-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        local VERSION...
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -707,6 +718,17 @@
     <span class="md-ellipsis">
       
         public VERSION...
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        local VERSION...
       
     </span>
   </a>
@@ -879,6 +901,18 @@ development part.</p>
 <span class="go">3.1</span>
 </code></pre></div>
 <p>A version that is not valid under PEP 440 fails, and nothing is printed.</p>
+<h2 id="local-version"><code>local VERSION...</code><a class="headerlink" href="#local-version" title="Permanent link">&para;</a></h2>
+<p>Print the local label of each of one or more
+<a href="https://peps.python.org/pep-0440/">PEP 440</a> versions, using <code>packaging</code>,
+one per line in the order given. The local label is the part after <code>+</code>, in
+normal form: lower case, with <code>-</code> and <code>_</code> separators written as <code>.</code>, and
+leading zeros dropped from a numeric segment. It is the part <code>public</code> drops.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>vergil-fixture-python-app<span class="w"> </span><span class="nb">local</span><span class="w"> </span><span class="m">1</span>.2.3+local.7<span class="w"> </span><span class="m">2</span>.0rc1+Ubuntu-1
+<span class="go">local.7</span>
+<span class="go">ubuntu.1</span>
+</code></pre></div>
+<p>A version that is not valid under PEP 440 fails, and so does a version with
+no local label; either way nothing is printed.</p>
 
 
 

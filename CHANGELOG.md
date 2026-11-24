@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.7] - 2026-11-24
+
+### CI
+
+- read the automation App secrets from the automation environment (#75)
+
+### Chores
+
+- uv lock --upgrade
+- sync the managed files with the released templates (#74)
+- sync the managed files with the released templates (#79)
+
+### Features
+
+- the daily agent audit (#78)
+- add the local subcommand and roll rich back one release in the lock (#80)
+
 ## [0.1.6] - 2026-11-23
 
 ### CI

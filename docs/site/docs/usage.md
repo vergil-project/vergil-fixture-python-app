@@ -202,3 +202,18 @@ ubuntu.1
 
 A version that is not valid under PEP 440 fails, and so does a version with
 no local label; either way nothing is printed.
+
+## `epoch VERSION...`
+
+Print the [PEP 440](https://peps.python.org/pep-0440/) epoch of each of one
+or more versions, using `packaging`, one per line in the order given. The
+epoch is the integer before `!`, and is `0` when the version has none.
+
+```console
+$ vergil-fixture-python-app epoch 1!2.0 3.1 2!0.1.dev4
+1
+0
+2
+```
+
+A version that is not valid under PEP 440 fails, and nothing is printed.

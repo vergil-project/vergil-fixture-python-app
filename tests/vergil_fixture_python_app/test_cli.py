@@ -27,6 +27,7 @@ def test_every_command_is_registered_once() -> None:
         "base",
         "public",
         "local",
+        "epoch",
     ]
     assert len(set(names)) == len(names)
 

@@ -33,6 +33,7 @@ A test fixture. It is never published to a package registry.
 - `base VERSION...` prints the base version (epoch and release) of each version.
 - `public VERSION...` prints the public version (no local label) of each version.
 - `local VERSION...` prints the local label (the part after `+`) of each version.
+- `epoch VERSION...` prints the PEP 440 epoch (`0` when absent) of each version.
 
 Its runtime dependencies are `rich`, `PyYAML` and `packaging`. Each fixture
 run adds one small change, so a new subcommand is one module under

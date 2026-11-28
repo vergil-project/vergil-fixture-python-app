@@ -569,6 +569,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#epoch-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        epoch VERSION...
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -729,6 +740,17 @@
     <span class="md-ellipsis">
       
         local VERSION...
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epoch-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        epoch VERSION...
       
     </span>
   </a>
@@ -913,6 +935,16 @@ leading zeros dropped from a numeric segment. It is the part <code>public</code>
 </code></pre></div>
 <p>A version that is not valid under PEP 440 fails, and so does a version with
 no local label; either way nothing is printed.</p>
+<h2 id="epoch-version"><code>epoch VERSION...</code><a class="headerlink" href="#epoch-version" title="Permanent link">&para;</a></h2>
+<p>Print the <a href="https://peps.python.org/pep-0440/">PEP 440</a> epoch of each of one
+or more versions, using <code>packaging</code>, one per line in the order given. The
+epoch is the integer before <code>!</code>, and is <code>0</code> when the version has none.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>vergil-fixture-python-app<span class="w"> </span>epoch<span class="w"> </span><span class="m">1</span>!2.0<span class="w"> </span><span class="m">3</span>.1<span class="w"> </span><span class="m">2</span>!0.1.dev4
+<span class="go">1</span>
+<span class="go">0</span>
+<span class="go">2</span>
+</code></pre></div>
+<p>A version that is not valid under PEP 440 fails, and nothing is printed.</p>
 
 
 

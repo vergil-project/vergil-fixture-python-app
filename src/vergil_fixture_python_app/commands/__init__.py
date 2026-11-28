@@ -10,6 +10,7 @@ from vergil_fixture_python_app.commands import (
     base,
     bump,
     compare,
+    epoch,
     greet,
     keys,
     latest,
@@ -32,4 +33,5 @@ COMMANDS = (
     base.COMMAND,
     public.COMMAND,
     local.COMMAND,
+    epoch.COMMAND,
 )

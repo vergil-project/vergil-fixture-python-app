@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.8] - 2026-11-28
+
+### Chores
+
+- uv lock --upgrade
+- sync the managed files with the released templates (#91)
+- sync the managed files with the released templates (#92)
+
+### Features
+
+- add the epoch subcommand (#93)
+
 ## [0.1.7] - 2026-11-24
 
 ### CI
